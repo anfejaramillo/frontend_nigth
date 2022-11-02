@@ -1,7 +1,6 @@
 import Cell from "./Cell";
 import Tools from "./Tools";
 function Row(props) {
-    console.log(props);
     //props.rowData={value}
     //props.columns={props.columns}
     //props.tools={props.tools}
