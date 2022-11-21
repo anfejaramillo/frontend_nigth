@@ -1,3 +1,5 @@
+import axios, { Axios } from "axios";
+
 let usuarios = [
     {
         id: 1,
@@ -1860,8 +1862,14 @@ let usuarios = [
     },
 ];
 
-function getData(url, headers, httpMethod, data) {
-    return usuarios;
+function getData(urlRequest, headers, httpMethod, dataBody) {
+    let promiseQuery = axios({
+        url: urlRequest,
+        headers: headers,
+        method: httpMethod,
+        data: dataBody,
+    });
+    return promiseQuery;
 }
 
 function getUsuario(id) {

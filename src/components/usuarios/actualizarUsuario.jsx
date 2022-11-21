@@ -6,7 +6,7 @@ function ActualizarUsuario(props) {
     let usuario = getUsuario(idUsuario);
     return (
         <div className="col-12 w-75 mx-auto">
-            <h3>Pagina: Actualizar Usuario</h3>
+            <h3>Pagina - Actualizar Usuario</h3>
             <form>
                 <div class="row g-3">
                     <div class="">
