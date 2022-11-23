@@ -1,30 +1,26 @@
 import Table from "../table/Table";
 import { useState } from "react";
-import { getData } from "../../js/getData";
+import { getRequest } from "../../js/getData";
 import MainPage from "../table/MainPage";
 import CreateButton from "../table/CreateBotton";
 import SearchBar from "../table/SearchBar";
 import BodyIndex from "./bodyIndex";
 import { useEffect } from "react";
-
+import { loadData } from "../../js/getData";
+import backendConfig from "../../config";
 let objCss = {
     border: "6px solid red",
 };
 
 function UsuariosIndex(props) {
-    const [datosTabla, setDatosTabla] = useState([]);
+    let data = loadData();
+    const [datosTabla, setDatosTabla] = useState(data);
     const [state, setState] = useState("loading");
     const [error, setError] = useState("");
-    useEffect(() => {
-        let promiseData = getData(
-            "http://localhost:3500/api/usuarios/all",
+    useEffect(function () {
+        let promiseData = getRequest(
+            backendConfig.FULL_API_PATH + "usuarios/all",
             {},
-            // {
-            //     Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
-            //     "Accept-Encoding": "gzip, deflate, br",
-            //     "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
-            //     "Access-Control-Allow-Origin": "*",
-            // },
             "get",
             {}
         );

@@ -1862,7 +1862,11 @@ let usuarios = [
     },
 ];
 
-function getData(urlRequest, headers, httpMethod, dataBody) {
+function loadData() {
+    return usuarios;
+}
+
+function getRequest(urlRequest, headers, httpMethod, dataBody) {
     let promiseQuery = axios({
         url: urlRequest,
         headers: headers,
@@ -1883,4 +1887,4 @@ function getUsuario(id) {
     return result;
 }
 
-export { getData, getUsuario };
+export { getRequest, getUsuario, loadData };

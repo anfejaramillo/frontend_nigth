@@ -96,7 +96,7 @@ function EliminarUsuario(props) {
 
                     <button
                         class="w-100 btn btn-outline-danger btn-lg"
-                        type="submit"
+                        type="button"
                         onClick={onClickSubmit}
                     >
                         Eliminar

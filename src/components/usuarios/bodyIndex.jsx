@@ -1,6 +1,6 @@
 import Table from "../table/Table";
 import { useState } from "react";
-import { getData } from "../../js/getData";
+import { getRequest } from "../../js/getData";
 import MainPage from "../table/MainPage";
 import CreateButton from "../table/CreateBotton";
 import SearchBar from "../table/SearchBar";
@@ -18,7 +18,7 @@ function BodyIndex(props) {
                 data={props.datosTabla}
                 path={"/usuarios"}
                 name={"Tabla de Usuarios"}
-                columns={["id", "firstName", "email", "username", "password"]}
+                columns={["_id", "firstName", "email", "username", "password"]}
                 columnsAlias={[
                     "ID",
                     "Nombre",
